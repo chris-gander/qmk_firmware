@@ -56,3 +56,11 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 	&end_key_override,
 	NULL // Null terminate the array of overrides!
 };
+
+bool rgb_matrix_indicators_user(void) {
+    if (host_keyboard_led_state().caps_lock) {
+        rgb_matrix_set_color(54, 255, 255, 255);
+        return true;
+    }
+    return true;
+}
