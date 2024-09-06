@@ -50,11 +50,10 @@ const key_override_t home_key_override = ko_make_with_layers_negmods_and_options
 const key_override_t end_key_override = ko_make_with_layers_negmods_and_options(MOD_MASK_CA, KC_RGHT, KC_END, ~0, MOD_MASK_SG, ko_option_no_reregister_trigger);
 
 // This globally defines all key overrides to be used
-const key_override_t **key_overrides = (const key_override_t *[]){
-  &delete_key_override,
+const key_override_t *key_overrides[] = {
+    &delete_key_override,
 	&home_key_override,
-	&end_key_override,
-	NULL // Null terminate the array of overrides!
+	&end_key_override
 };
 
 bool rgb_matrix_indicators_user(void) {
